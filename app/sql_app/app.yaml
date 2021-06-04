@@ -1,0 +1,10 @@
+runtime: python37
+
+env_variables:
+  CLOUD_SQL_USERNAME: admin
+  CLOUD_SQL_PASSWORD: password
+  CLOUD_SQL_DATABASE_NAME: data_col
+  CLOUD_SQL_CONNECTION_NAME: tribal-octane-313314:asia-southeast2:roadqueapi
+
+
+entrypoint: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
